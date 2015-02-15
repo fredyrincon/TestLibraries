@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 14
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "test.camalionit.com.au.testlibraries"
+        minSdkVersion 14
+        targetSdkVersion 14
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.github.frankiesardo:icepick:2.3.6'
+    provided 'com.github.frankiesardo:icepick-processor:2.3.6'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}
